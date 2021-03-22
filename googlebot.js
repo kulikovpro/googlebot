@@ -16,17 +16,22 @@ function getCookie(name) {
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
+
 let sites = {
     "xn----7sbab5aqcbiddtdj1e1g.xn--p1ai": ["Как звучит флейта", "Валторна", "Тромбон", "Кларнет", "Фагот", "Гобой", "Саксофон"],
     "crushdrummers.ru": ["Барабанное шоу", "Заказать шоу барабанщиков", "Барабанное шоу в Москве"]
 }
+
 let site = Object.keys(sites)[Math.floor(Math.random() * Object.keys(sites).length)];
 let keywords = sites[site];
 let randomIndex = Math.floor(Math.random() * keywords.length);
 let keyword = keywords[randomIndex];
+
 let googleInput = document.getElementsByName('q')[0];
 let btnK = document.getElementsByName('btnK')[1]; //Кнопка посик в google
+
 let links = document.links;
+
 if (btnK != undefined) { // Главная страница поисковика
     let i = 0;
     document.cookie = "site=" + site;
